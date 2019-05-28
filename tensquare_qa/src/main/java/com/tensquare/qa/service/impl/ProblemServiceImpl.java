@@ -28,4 +28,32 @@ public class ProblemServiceImpl implements ProblemService {
         Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
         return problemRepository.findByLabelIdOrderByReplyTimeDesc(labelId, pageable);
     }
+
+    /**
+     * 根据标签id查询热门回复
+     * @param labelId
+     * @param currentPage
+     * @param pageSize
+     * @return
+     */
+    @Override
+    public Page<Problem> findHotReplay(String labelId, int currentPage, int pageSize) {
+
+        Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
+        return problemRepository.findByLabelIdOrderByReplyDesc(labelId, pageable);
+    }
+
+    /**
+     * 根据标签id查询待回复
+     * @param labelId
+     * @param currentPage
+     * @param pageSize
+     * @return
+     */
+    @Override
+    public Page<Problem> findWaitReply(String labelId, int currentPage, int pageSize) {
+
+        Pageable pageable = PageRequest.of(currentPage - 1, pageSize);
+        return problemRepository.findByLabelIdAndReplyISNullOrderByCreateTimeDesc(labelId, pageable);
+    }
 }

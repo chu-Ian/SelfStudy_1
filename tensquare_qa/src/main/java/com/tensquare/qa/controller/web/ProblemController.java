@@ -1,6 +1,7 @@
-package com.tensquare.qa.controller;
+package com.tensquare.qa.controller.web;
 
 import com.tensquare.qa.po.Problem;
+import com.tensquare.qa.service.ProblemService;
 import constants.StatusCode;
 import dto.ResultDTO;
 import org.springframework.beans.factory.annotation.Autowired;

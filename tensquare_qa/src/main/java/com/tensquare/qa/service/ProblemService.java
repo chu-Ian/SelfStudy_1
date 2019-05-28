@@ -16,16 +16,19 @@ public interface ProblemService {
 
     /**
      * 根据标签id查询热门回复
-     * @param label
+     * @param labelId
      * @param currentPage
      * @param pageSize
      * @return
      */
-    Page<Problem> findHotReplay(String label, int currentPage, int pageSize);
+    Page<Problem> findHotReplay(String labelId, int currentPage, int pageSize);
 
     /**
      * 根据标签id查询待回复
+     * @param labelId
+     * @param currentPage
+     * @param pageSize
      * @return
      */
-    Page<Problem> findWaitReply(String label, int currentPage, int pageSize);
+    Page<Problem> findWaitReply(String labelId, int currentPage, int pageSize);
 }
