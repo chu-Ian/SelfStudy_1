@@ -32,4 +32,34 @@ public class ProblemController {
         Page<Problem> problemsByPage = problemService.findLastestNewsByPage(label, currentPage, pageSize);
         return new ResultDTO(true, StatusCode.OK, "查询成功", problemsByPage.getContent());
     }
+
+    /**
+     * 根据标签id查询热门回复
+     * @param label
+     * @param currentPage
+     * @param pageSize
+     * @return
+     */
+    @PostMapping("/hostList/{label}")
+    public ResultDTO hotReply(@PathVariable String label,
+                              @RequestParam("currentPage") int currentPage,
+                              @RequestParam("pageSize") int pageSize) {
+
+        Page<Problem> page = problemService.findHotReplay(label, currentPage, pageSize);
+        return new ResultDTO(true, StatusCode.OK, "查询成功", page.getContent());
+    }
+
+    /**
+     * 根据标签id查询待回复
+     * @return
+     */
+    @PostMapping("/waitReply/{label}")
+    public ResultDTO waitReply(@PathVariable String label,
+                               @RequestParam("currentPage") int currentPage,
+                               @RequestParam("pageSize") int pageSize) {
+
+        Page<Problem> page = problemService.findWaitReply(label, currentPage, pageSize);
+        return new ResultDTO(true, StatusCode.OK, "查询成功", page.getContent());
+
+    }
 }
