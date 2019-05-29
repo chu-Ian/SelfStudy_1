@@ -1,6 +1,2 @@
-\.idea/
-\.gradle/
-build
-out
-\.DS_Store
-*.iml
+/.idea
+/*.iml

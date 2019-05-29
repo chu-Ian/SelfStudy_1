@@ -2,7 +2,7 @@ server:
   port: 9001 #服务端口
 spring:
   application:
-    name: tensquare-base #服务名
+    name: tensquare-base #服务�?
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://10.0.18.77:3306/tensquare_base?characterEncoding=utf-8
