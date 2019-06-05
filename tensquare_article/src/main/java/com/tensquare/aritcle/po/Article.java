@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Timestamp;
 
@@ -18,6 +19,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 public class Article {
 
+    @Id
     private String id;
     @Column(name = "columnid")
     private String columnId; //专栏id
