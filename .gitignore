@@ -1,5 +1,5 @@
-/.idea
-/*.iml
+/.idea/
+/*.iml/
+/src/test/
+/target/
 
-tensquare_article/tensquare_article.iml
-temsquare_common/target
