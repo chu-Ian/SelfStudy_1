@@ -1,4 +1,4 @@
-package com.tensquare.gathering.controller;
+package com.tensquare.gathering.web.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.tensquare.gathering.po.Gathering;
