@@ -30,15 +30,17 @@ public class LabelServiceImpl implements LabelService {
 
     /**
      * 保存一个标签
+     *
      * @param label
      */
     public void saveLabel(Label label) {
-        label.setId(myConfig.getIdWorker().nextId()+"");
+        label.setId(myConfig.getIdWorker().nextId() + "");
         labelRepository.save(label);
     }
 
     /**
      * 更新一个标签
+     *
      * @param label
      */
     public void updateLabel(Label label) {
@@ -47,6 +49,7 @@ public class LabelServiceImpl implements LabelService {
 
     /**
      * 删除一个标签
+     *
      * @param id
      */
     public void deleteLabelById(String id) {
@@ -55,6 +58,7 @@ public class LabelServiceImpl implements LabelService {
 
     /**
      * 查询全部的标签
+     *
      * @return
      */
     public List<Label> findLabelList() {
@@ -63,6 +67,7 @@ public class LabelServiceImpl implements LabelService {
 
     /**
      * 根据ID查询标签
+     *
      * @param id
      * @return
      */
@@ -72,6 +77,7 @@ public class LabelServiceImpl implements LabelService {
 
     /**
      * 有条件查询标签
+     *
      * @param params
      * @return
      */
@@ -84,6 +90,7 @@ public class LabelServiceImpl implements LabelService {
 
     /**
      * 分页查询条件
+     *
      * @param params
      * @param page
      * @param size
@@ -94,7 +101,7 @@ public class LabelServiceImpl implements LabelService {
 
         Specification<Label> specification = getSpecification(params);
 
-        PageRequest pageRequest = PageRequest.of(page-1, size);
+        PageRequest pageRequest = PageRequest.of(page - 1, size);
         return labelRepository.findAll(specification, pageRequest);
     }
 
@@ -104,18 +111,18 @@ public class LabelServiceImpl implements LabelService {
             List<Predicate> predicateList = new ArrayList<>();
 
             if (!StringUtils.isEmpty(params.get("labelName"))) {
-                predicateList.add(cb.like(root.get("labelName").as(String.class), "%"+(String)params.get("labelName")+"%"));
+                predicateList.add(cb.like(root.get("labelName").as(String.class), "%" + (String) params.get("labelName") + "%"));
             }
             if (!StringUtils.isEmpty(params.get("state"))) {
-                predicateList.add(cb.equal(root.get("state").as(String.class), (String)params.get("state")));
+                predicateList.add(cb.equal(root.get("state").as(String.class), (String) params.get("state")));
             }
             if (!StringUtils.isEmpty(params.get("recommend"))) {
-                predicateList.add(cb.equal(root.get("recommend").as(String.class), (String)params.get("recommend")));
+                predicateList.add(cb.equal(root.get("recommend").as(String.class), (String) params.get("recommend")));
             }
 
             return query.where(predicateList.toArray(new Predicate[predicateList.size()])).getRestriction();
 //          return cb.and(predicateList.toArray(new Predicate[predicateList.size()]));
-         });
+        });
 
         return specification;
     }

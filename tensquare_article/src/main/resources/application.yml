@@ -13,3 +13,8 @@ spring:
     database: mysql
   redis:
     host: 10.0.18.77
+  data:
+    mongodb:
+      host: localhost
+      database: commentdb
+      port: 27017

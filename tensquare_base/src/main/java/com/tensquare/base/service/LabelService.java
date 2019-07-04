@@ -10,30 +10,35 @@ public interface LabelService {
 
     /**
      * 保存一个标签
+     *
      * @param label
      */
     void saveLabel(Label label);
 
     /**
      * 更新一个标签
+     *
      * @param label
      */
     void updateLabel(Label label);
 
     /**
      * 删除一个标签
+     *
      * @param id
      */
     void deleteLabelById(String id);
 
     /**
      * 查询全部的标签
+     *
      * @return
      */
     List<Label> findLabelList();
 
     /**
      * 根据ID查询标签
+     *
      * @param id
      * @return
      */

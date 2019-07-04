@@ -25,17 +25,19 @@ public class LabelController {
 
     /**
      * 保存一个标签
+     *
      * @param label
      * @return
      */
     @PostMapping
     public ResultDTO add(@RequestBody Label label) {
         labelService.saveLabel(label);
-        return new ResultDTO(true, StatusCode.OK,"添加成功");
+        return new ResultDTO(true, StatusCode.OK, "添加成功");
     }
 
     /**
      * 修改一个标签
+     *
      * @param id
      * @return
      */
@@ -50,17 +52,19 @@ public class LabelController {
 
     /**
      * 删除一个标签
+     *
      * @param id
      * @return
      */
     @DeleteMapping("/{id}")
     public ResultDTO deleteById(@PathVariable String id) {
         labelService.deleteLabelById(id);
-        return new ResultDTO(true,StatusCode.OK,"删除成功");
+        return new ResultDTO(true, StatusCode.OK, "删除成功");
     }
 
     /**
      * 查询全部标签
+     *
      * @return
      */
     @GetMapping
@@ -71,6 +75,7 @@ public class LabelController {
 
     /**
      * 通过id查询标签
+     *
      * @param id
      * @return
      */
@@ -83,17 +88,19 @@ public class LabelController {
 
     /**
      * 有条件查询标签
+     *
      * @param params
      * @return
      */
     @PostMapping("/search")
     public ResultDTO findLabelByParams(@RequestBody Map<String, Object> params) {
         List<Label> labelList = labelService.findLabelByParams(params);
-        return new ResultDTO(true,StatusCode.OK,"查询成功",labelList);
+        return new ResultDTO(true, StatusCode.OK, "查询成功", labelList);
     }
 
     /**
      * 分页查询条件
+     *
      * @param params
      * @param page
      * @param size
@@ -105,7 +112,7 @@ public class LabelController {
                                      @PathVariable int size) {
         Page<Label> pageResp = labelService.findLabelByPage(params, page, size);
 //        System.out.println(pageResp.getContent());
-        PageResultDTO<Label> pageResultDTO = new PageResultDTO<>(pageResp.getTotalElements(),pageResp.getContent());
+        PageResultDTO<Label> pageResultDTO = new PageResultDTO<>(pageResp.getTotalElements(), pageResp.getContent());
         return new ResultDTO(true, StatusCode.OK, "查询成功", pageResultDTO);
 
     }
