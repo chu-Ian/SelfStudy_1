@@ -34,7 +34,7 @@ public class Problem {
     private BigInteger thumbup; //点赞数
     private BigInteger reply; //回复数
     private String solve; //是否解决
-    @Column(name = "replyName")
+    @Column(name = "replyname")
     private String replyName; //回复人昵称
     @Column(name = "replytime")
     private Timestamp replyTime; //回复时间

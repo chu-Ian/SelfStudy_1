@@ -1,0 +1,18 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: tensquare-gathering
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://10.0.18.77:3306/tensquare_gathering?characterEncoding=UTF8
+  redis:
+    host: 10.0.18.77
+  #cache:
+    #redis:
+      #time-to-live: 6000 #设置redis缓存对象存活时间（单位毫秒）：1min后缓存过期
+  jpa:
+    show-sql: true
+    database: mysql
