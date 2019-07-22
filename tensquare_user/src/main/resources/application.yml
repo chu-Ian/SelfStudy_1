@@ -1,0 +1,16 @@
+server:
+  port: 9007
+spring:
+  application:
+    name: tensquare-user
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///gradle_test?characterEncoding=UTF-8
+    username: root
+    password: 123456
+  jpa:
+    show-sql: true
+  redis:
+    host: 127.0.0.1
+  rabbitmq:
+    host: 127.0.0.1

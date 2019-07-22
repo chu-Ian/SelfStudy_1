@@ -1,0 +1,13 @@
+server:
+  port: 9008
+spring:
+  application:
+    name: tensquare-sms
+  rabbitmq:
+    host: 127.0.0.1
+aliyun:
+  sms:
+    accessKeyId: 1
+    accessKeyScret: 2
+    signName: 云通信
+    templateCode: SMS_1000000

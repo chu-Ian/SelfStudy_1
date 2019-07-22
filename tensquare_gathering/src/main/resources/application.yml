@@ -7,7 +7,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
-    url: jdbc:mysql://10.0.18.77:3306/tensquare_gathering?characterEncoding=UTF8
+    url: jdbc:mysql://10.0.26.49:3306/tensquare_gathering?characterEncoding=UTF8
   redis:
     host: 10.0.18.77
   #cache:
